@@ -8,7 +8,24 @@ function App() {
         component='header'
         sx={{ paddingBlock: 6, textAlign: 'center', fontSize: 24 }}
       >
-        <Typography variant='h1'>Certificate Generator</Typography>
+        <Typography
+          variant='h1'
+          sx={{
+            background:
+              '-webkit-linear-gradient(45deg, #fdd649 30%, #FD642E 90%)',
+            webkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            color: 'transparent',
+            backgroundClip: 'text',
+            textTransform: 'uppercase',
+            animation: 'gradient 5s infinite alternate-reverse',
+
+            backgroundSize: '300%',
+            backgroundPosition: '-100%',
+          }}
+        >
+          Certificate Generator
+        </Typography>
       </Box>
       <Box
         component='main'

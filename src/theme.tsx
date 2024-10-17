@@ -26,7 +26,7 @@ const theme = createTheme({
     h1: {
       fontFamily: 'Space Grotesk',
       fontWeight: 700,
-      fontSize: 32,
+      fontSize: 42,
     },
     h2: {
       fontFamily: 'poppins',
