@@ -7,7 +7,7 @@ const theme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#f19500',
+      main: '#fdd649',
     },
     secondary: {
       main: '#19857b',
@@ -60,6 +60,18 @@ const theme = createTheme({
             '&::placeholder': {
               color: 'GrayText',
             },
+          },
+        },
+      ],
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: {
+            variant: 'contained',
+          },
+          style: {
+            height: '44px',
           },
         },
       ],

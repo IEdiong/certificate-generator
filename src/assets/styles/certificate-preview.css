@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: bold;
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 'extra-bold';
+  src: url('../fonts/OpenSans-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins';
+  font-weight: bold;
+  src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins';
+  font-weight: medium;
+  letter-spacing: 3.2px;
+  font-style: normal;
+  src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins';
+  font-weight: regular;
+  src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: bold;
+  src: url('../fonts/Inter_24pt-Bold.ttf') format('truetype');
+}

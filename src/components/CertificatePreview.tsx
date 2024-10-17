@@ -2,6 +2,8 @@ import { Typography } from '@mui/material';
 import { Box } from '@mui/material';
 import { Dayjs } from 'dayjs';
 
+import '../assets/styles/certificate-preview.css';
+
 type CertificatPreviewProps = {
   name?: string;
   description?: string;
@@ -18,8 +20,8 @@ function CertificatePreview({
   return (
     <Box
       sx={{
-        width: '100%',
-        maxWidth: '894.92px',
+        width: '842px',
+        height: '596px',
         color: 'black',
         backgroundColor: 'white',
         aspectRatio: '297/210',
@@ -75,13 +77,13 @@ function CertificatePreview({
             textTransform: 'uppercase',
             fontFamily: 'poppins',
             marginBlockStart: '-10px',
-            letterSpacing: '0.2em',
+            letterSpacing: '3.2px',
           }}
         >
           of internship
         </Typography>
 
-        <Box sx={{ marginBlockStart: '35px' }}>
+        <Box sx={{ marginBlockStart: '45px' }}>
           <Box sx={{ height: '60px' }}>
             <Typography
               sx={{
@@ -137,7 +139,19 @@ function CertificatePreview({
                 fontFamily: 'Open Sans',
               }}
             >
-              <img src='/signature.svg' alt='signature' />
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  flexShrink: 0,
+                }}
+              >
+                <img
+                  src='/signature.svg'
+                  alt='signature'
+                  style={{ objectFit: 'cover' }}
+                />
+              </Box>
               <Typography sx={{ fontSize: '11px', fontWeight: '800' }}>
                 Nilanjan Raychaudhuri
               </Typography>
@@ -155,7 +169,17 @@ function CertificatePreview({
             }}
           >
             <Box sx={{ display: 'flex', columnGap: '5px' }}>
-              <img src='cert-badge.svg' alt='badge' />
+              <Box
+                sx={{
+                  width: '35.75px',
+                  height: '46.5px',
+                  flexShrink: 0,
+                  backgroundImage: 'url("/cert-badge.svg")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }}
+              />
               <Box>
                 <Typography
                   sx={{

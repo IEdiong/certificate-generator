@@ -20,6 +20,7 @@ export default function CertificateGenerator() {
       paperSize: 'auto',
       landscape: true,
       scale: 1,
+      fileName: `${name.split(' ').join('-') || 'john-doe'}-certificate.pdf`,
     });
   };
 
@@ -78,20 +79,24 @@ export default function CertificateGenerator() {
             slotProps={{ textField: { variant: 'standard' } }}
           />
         </LocalizationProvider>
-        <Button variant='contained' onClick={exportPDFWithMethod}>
+        <Button
+          variant='contained'
+          onClick={exportPDFWithMethod}
+          sx={{ marginBlockStart: 2 }}
+        >
           Generate Certificate
         </Button>
       </Box>
 
       <PDFExport paperSize='A4'>
-        <div ref={container}>
+        <Box sx={{ overflowX: 'scroll' }} ref={container}>
           <CertificatePreview
             name={name}
             description={description}
             certificateId={certificateId}
             date={date}
           />
-        </div>
+        </Box>
       </PDFExport>
     </Box>
   );
