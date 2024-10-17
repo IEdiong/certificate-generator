@@ -1,19 +1,20 @@
 import { createTheme } from '@mui/material/styles';
-import { red } from '@mui/material/colors';
+// import { red } from '@mui/material/colors';
 
 // A custom theme for this app
 const theme = createTheme({
   cssVariables: true,
   palette: {
+    mode: 'dark',
     primary: {
       main: '#f19500',
     },
     secondary: {
       main: '#19857b',
     },
-    error: {
-      main: red.A400,
-    },
+    //   error: {
+    //     main: red.A400,
+    //   },
     background: {
       default: '#121212',
     },
@@ -40,6 +41,32 @@ const theme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+  },
+  components: {
+    MuiTextField: {
+      variants: [
+        {
+          props: {
+            variant: 'standard',
+          },
+          style: {
+            borderColor: 'GrayText',
+            '&::placeholder': {
+              color: 'GrayText',
+            },
+          },
+        },
+      ],
+    },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
   },
 });
 
