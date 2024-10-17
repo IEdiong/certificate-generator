@@ -1,16 +1,27 @@
-import { useState } from 'react';
-import { Box, TextField } from '@mui/material';
+import { useRef, useState } from 'react';
+import { Box, Button, TextField } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { Dayjs } from 'dayjs';
 import CertificatePreview from './CertificatePreview';
+import { PDFExport, savePDF } from '@progress/kendo-react-pdf';
 
 export default function CertificateGenerator() {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [certificateId, setCertificateId] = useState('');
   const [date, setDate] = useState<Dayjs | null>(null);
+  const container = useRef(null);
+
+  const exportPDFWithMethod = () => {
+    const element = (container.current || document.body) as HTMLElement;
+    savePDF(element, {
+      paperSize: 'auto',
+      landscape: true,
+      scale: 1,
+    });
+  };
 
   return (
     <Box
@@ -67,14 +78,21 @@ export default function CertificateGenerator() {
             slotProps={{ textField: { variant: 'standard' } }}
           />
         </LocalizationProvider>
+        <Button variant='contained' onClick={exportPDFWithMethod}>
+          Generate Certificate
+        </Button>
       </Box>
 
-      <CertificatePreview
-        name={name}
-        description={description}
-        certificateId={certificateId}
-        date={date}
-      />
+      <PDFExport paperSize='A4'>
+        <div ref={container}>
+          <CertificatePreview
+            name={name}
+            description={description}
+            certificateId={certificateId}
+            date={date}
+          />
+        </div>
+      </PDFExport>
     </Box>
   );
 }
