@@ -15,7 +15,6 @@ function App() {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          // minHeight: '100vh',
           paddingBlockEnd: 6,
         }}
       >
