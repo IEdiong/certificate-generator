@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Box, TextField } from '@mui/material';
+import { Box, TextField, Typography } from '@mui/material';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -19,7 +19,8 @@ export default function CertificateGenerator() {
         display: 'flex',
         flexDirection: { xs: 'column', lg: 'row' },
         alignItems: { xs: 'center', lg: 'flex-start' },
-        gap: 3,
+        columnGap: 8,
+        rowGap: 3,
         width: '100%',
         maxWidth: '1200px',
         paddingInline: 3,
@@ -69,7 +70,71 @@ export default function CertificateGenerator() {
         </LocalizationProvider>
       </Box>
 
-      <div className='border-4 border-gray-800 p-8 bg-gray-100 relative'>
+      <Box
+        sx={{
+          width: '100%',
+          maxWidth: '894.92px',
+          // height: '595.5px',
+          backgroundColor: 'white',
+          aspectRatio: '297/210',
+          backgroundImage: 'url("/bg-tublian.svg")',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          paddingBlock: '30px',
+          paddingInline: '32px',
+        }}
+      >
+        <Box
+          sx={{
+            borderColor: '#FD642E',
+            borderWidth: '6px',
+            borderStyle: 'solid',
+            borderRadius: '20px',
+            height: '100%',
+            padding: '22px',
+          }}
+        >
+          <Box sx={{ display: 'flex' }}>
+            <img src='/logo.svg' alt='logo' />
+            <Typography
+              variant='h2'
+              sx={{
+                fontWeight: 'bold',
+                marginBlockStart: '12px',
+                textTransform: 'uppercase',
+              }}
+            >
+              Tublian
+            </Typography>
+          </Box>
+          <Typography
+            sx={{
+              fontSize: '42px',
+              fontWeight: 'bold',
+              marginBlockStart: '3px',
+              color: 'black',
+              textTransform: 'uppercase',
+              fontFamily: 'Inter',
+            }}
+          >
+            Certificate
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: '21px',
+              fontWeight: 'medium',
+              color: '#FC3946',
+              textTransform: 'uppercase',
+              fontFamily: 'poppins',
+              marginBlockStart: '-10px',
+            }}
+          >
+            of internship
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* <div className='border-4 border-gray-800 p-8 bg-gray-100 relative'>
         <div className='text-center'>
           <h2 className='text-3xl font-bold mb-4'>
             Certificate of Achievement
@@ -90,7 +155,7 @@ export default function CertificateGenerator() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </Box>
   );
 }

@@ -28,6 +28,12 @@ const theme = createTheme({
       fontWeight: 700,
       fontSize: 32,
     },
+    h2: {
+      fontFamily: 'poppins',
+      fontWeight: 700,
+      fontSize: 20,
+      color: '#FD642E',
+    },
     fontFamily: [
       'poppins',
       '-apple-system',

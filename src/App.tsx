@@ -15,7 +15,8 @@ function App() {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          height: '100vh',
+          // minHeight: '100vh',
+          paddingBlockEnd: 6,
         }}
       >
         <CertificateGenerator />
