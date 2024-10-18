@@ -1,50 +1,65 @@
-# React + TypeScript + Vite
+# Tublian Certificate Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a website that allows Tublian to automate their certificate generation process
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Screenshot](#screenshot)
+- [Getting Started](#getting-started)
+  - [Tech Stack](#tech-stack)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Running the Application](#running-the-application)
 
-## Expanding the ESLint configuration
+## Screenshot
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![Screenshot](./screenshots/screenshot-desktop.png)
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Tech Stack
+
+- **Frontend:** React.js, KendoReact PDF
+- **Styling:** CSS & Material UI
+- **Build Tool:** Vite
+- **Deployment:** Netlify
+- **Version Control:** Git, Github
+
+### Prerequisites
+
+List any prerequisites or dependencies that need to be installed before running the application. For example:
+
+- [Node.js](https://nodejs.org/) (v18.10.0 or higher)
+- [yarn](https://yarnpkg.com/) (v1.22.22 or higher)
+
+> Please use only `yarn` for this project.
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/IEdiong/certificate-generator.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd certificate-generator
+   ```
+
+3. Install project dependencies:
+
+   ```bash
+   yarn install
+   ```
+
+## Running the Application
+
+After completing the installation steps, you can run the application using the following command:
+
+```bash
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+The development server will start, and the application will be accessible at [http://localhost:5173](http://localhost:5173)
